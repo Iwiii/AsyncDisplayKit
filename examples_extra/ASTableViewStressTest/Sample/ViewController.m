@@ -31,7 +31,7 @@ typedef enum : NSUInteger {
   ReloadTypeMax
 } ReloadType;
 
-@interface ViewController () <ASTableViewDataSource, ASTableViewDelegate>
+@interface ViewController () <ASTableDataSource, ASTableDelegate>
 {
   ASTableView *_tableView;
   NSMutableArray *_sections; // Contains arrays of indexPaths representing rows
@@ -47,7 +47,7 @@ typedef enum : NSUInteger {
   if (!(self = [super init]))
     return nil;
 
-  _tableView = [[ASTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+  _tableView = [[ASTableNO alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
   _tableView.asyncDataSource = self;
   _tableView.asyncDelegate = self;
   _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
